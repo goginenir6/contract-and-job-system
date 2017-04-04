@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <form class="form-signin" action="login" method="POST">{% csrf_token %}
+        <div class="text-center"><i class="fa fa-user fa-5x" aria-hidden="true"></i>
+            <h2 class="form-signin-heading">Please sign in</h2>
+        </div>
+        <label for="inputEmail" class="sr-only" style="color: #240024;">Email address</label>
+        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" style="border-radius:0px;" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" style="border-radius:0px;" placeholder="Password" required>
+        <!--<div class="checkbox">
+            <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>-->
+        <button class="btn-block btncls" type="submit">Sign in</button>
+        <p style="color: red">{{login_message}}</p>
+    </form>
+</div>
+<div class="col-md-4"></div>
+
+{% endblock %}
